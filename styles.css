@@ -503,12 +503,17 @@ body {
 }
 
 /* Responsive Adjustments for Mobile (max-width: 768px) */
+/* Responsive Adjustments for Mobile (max-width: 768px) */
 @media (max-width: 768px) {
     /* Navbar Mobile Wrap */
     .navbar {
         flex-direction: column; /* Stack logo and nav links vertically */
         padding: 1rem; /* Adjust padding for smaller screens */
-        position: relative; /* Change to relative for better flow on mobile */
+        position: fixed; /* Changed to fixed to keep it at the top */
+        top: 0; /* Ensure it's at the very top */
+        width: 100%; /* Ensure it spans the full width */
+        z-index: 1000; /* High z-index to ensure it stays on top of other content */
+        background: #1A3353; /* Ensure background is set for fixed navbar */
     }
 
     .nav-links {
@@ -525,10 +530,19 @@ body {
     }
 
     /* Hero Section Mobile Wrap */
+    /* Add padding to the hero section to prevent content from being hidden behind the fixed navbar */
+    .hero-section {
+        padding-top: 10rem; /* Increased padding-top to accommodate the fixed navbar height on mobile */
+        flex-direction: column; /* Stack text and image vertically */
+        text-align: center; /* Center align text content */
+        padding-left: 1rem; /* Adjust padding */
+        padding-right: 1rem; /* Adjust padding */
+    }
+
     .hero-container {
         flex-direction: column; /* Stack text and image vertically */
         text-align: center; /* Center align text content */
-        padding: 1rem; /* Adjust padding */
+        padding: 0; /* Remove padding from container as section handles it */
     }
 
     .hero-text h1 {
@@ -630,5 +644,31 @@ body {
     .socials {
         flex-direction: column; /* Stack social links vertically */
         gap: 1rem; /* Adjust gap */
+    }
+}
+
+/* Global Navbar Fix for all screen sizes */
+.navbar {
+    position: fixed; /* Make the navbar fixed at the top */
+    top: 0; /* Align to the top of the viewport */
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 1000; /* Ensure it's above other content */
+    background: #1A3353; /* Ensure it has a background when fixed */
+}
+
+/* Adjust padding for the hero section to account for the fixed navbar */
+.hero-section {
+    padding-top: 7rem; /* Original padding-top for desktop */
+}
+
+/* Adjust padding for the body to ensure content is not hidden behind the fixed navbar */
+body {
+    padding-top: 0; /* Reset body padding-top, as hero-section will handle it */
+}
+
+/* Ensure the hero section's padding-top is responsive */
+@media (min-width: 769px) {
+    .hero-section {
+        padding-top: 7rem; /* Maintain original padding for larger screens */
     }
 }
