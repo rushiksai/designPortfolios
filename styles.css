@@ -505,71 +505,80 @@ body {
 /* Responsive Adjustments for Mobile (max-width: 768px) */
 /* Responsive Adjustments for Mobile (max-width: 768px) */
 @media (max-width: 768px) {
-    /* Navbar fixed at top and horizontal */
-    .navbar {
-        display: flex;
-        justify-content: space-between; /* space between logo and nav */
-        align-items: center;
-        padding: 1rem;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        background: #1A3353;
-        flex-direction: row; /* Make nav horizontal on mobile */
-    }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #1A3353;
+    z-index: 9999;
+  }
 
-    .nav-links {
-        display: none; /* Hidden by default - for dropdown toggle */
-        flex-direction: column;
-        background-color: #1A3353;
-        position: absolute;
-        top: 100%; /* Just below navbar */
-        left: 0;
-        width: 100%;
-        padding: 1rem 0;
-    }
+  .logo {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
 
-    .nav-links.active {
-        display: flex; /* Show nav on toggle */
-    }
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    z-index: 10000;
+    cursor: pointer;
+  }
 
-    .nav-links li a {
-        padding: 0.8rem 0;
-        text-align: center;
-        width: 100%;
-        color: white;
-    }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #1A3353;
+    text-align: center;
+    padding: 1rem 0;
+  }
 
-    /* Hamburger menu (optional if you want it) */
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-    }
+  .nav-links.active {
+    display: flex;
+  }
 
-    /* Hero section padding to not be hidden under navbar */
-    .hero-section {
-        padding-top: 6.5rem;
-        text-align: center;
-    }
+  .nav-links li a {
+    padding: 0.8rem 0;
+    color: white;
+    text-decoration: none;
+  }
 
-    .hero-container {
-        flex-direction: column;
-        padding: 0;
-        align-items: center;
-    }
+  .hero-section {
+    padding-top: 6.5rem; /* offset for fixed navbar */
+    text-align: center;
+  }
 
-    .hero-text {
-        text-align: center;
-    }
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
 
-    .hero-image {
-        margin-top: 2rem;
-        order: -1;
-    }
+  .hero-text {
+    text-align: center;
+  }
 
-    .profile-pic {
-        width: 200px;
-        height: 200px;
-    }
+  .hero-image {
+    order: -1;
+    margin-top: 2rem;
+  }
+
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+  }
 }
+
