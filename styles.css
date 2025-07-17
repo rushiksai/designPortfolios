@@ -505,170 +505,71 @@ body {
 /* Responsive Adjustments for Mobile (max-width: 768px) */
 /* Responsive Adjustments for Mobile (max-width: 768px) */
 @media (max-width: 768px) {
-    /* Navbar Mobile Wrap */
+    /* Navbar fixed at top and horizontal */
     .navbar {
-        flex-direction: column; /* Stack logo and nav links vertically */
-        padding: 1rem; /* Adjust padding for smaller screens */
-        position: fixed; /* Changed to fixed to keep it at the top */
-        top: 0; /* Ensure it's at the very top */
-        width: 100%; /* Ensure it spans the full width */
-        z-index: 1000; /* High z-index to ensure it stays on top of other content */
-        background: #1A3353; /* Ensure background is set for fixed navbar */
+        display: flex;
+        justify-content: space-between; /* space between logo and nav */
+        align-items: center;
+        padding: 1rem;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: #1A3353;
+        flex-direction: row; /* Make nav horizontal on mobile */
     }
 
     .nav-links {
-        margin-top: 1rem; /* Add space between logo and links */
-        flex-direction: column; /* Stack nav links vertically */
-        align-items: center; /* Center align individual links */
-        width: 100%; /* Make links take full width */
+        display: none; /* Hidden by default - for dropdown toggle */
+        flex-direction: column;
+        background-color: #1A3353;
+        position: absolute;
+        top: 100%; /* Just below navbar */
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav on toggle */
     }
 
     .nav-links li a {
-        width: 80%; /* Make buttons take more width for easier tapping */
-        text-align: center; /* Center text within buttons */
-        margin-bottom: 0.5rem; /* Add space between stacked buttons */
+        padding: 0.8rem 0;
+        text-align: center;
+        width: 100%;
+        color: white;
     }
 
-    /* Hero Section Mobile Wrap */
-    /* Add padding to the hero section to prevent content from being hidden behind the fixed navbar */
+    /* Hamburger menu (optional if you want it) */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Hero section padding to not be hidden under navbar */
     .hero-section {
-        padding-top: 10rem; /* Increased padding-top to accommodate the fixed navbar height on mobile */
-        flex-direction: column; /* Stack text and image vertically */
-        text-align: center; /* Center align text content */
-        padding-left: 1rem; /* Adjust padding */
-        padding-right: 1rem; /* Adjust padding */
+        padding-top: 6.5rem;
+        text-align: center;
     }
 
     .hero-container {
-        flex-direction: column; /* Stack text and image vertically */
-        text-align: center; /* Center align text content */
-        padding: 0; /* Remove padding from container as section handles it */
+        flex-direction: column;
+        padding: 0;
+        align-items: center;
     }
 
-    .hero-text h1 {
-        font-size: 2.2rem; /* Adjust heading size for mobile */
-    }
-
-    .hero-text p {
-        font-size: 1rem; /* Adjust paragraph size */
-    }
-
-    .hero-buttons {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 0.8rem; /* Adjust gap between buttons */
-        width: 100%; /* Make buttons take full width */
-    }
-
-    .hero-buttons .btn {
-        width: 80%; /* Make buttons take more width */
-        margin: 0 auto; /* Center buttons */
+    .hero-text {
+        text-align: center;
     }
 
     .hero-image {
-        margin-top: 2rem; /* Add space between text and image */
-        order: -1; /* Place image above text on mobile */
+        margin-top: 2rem;
+        order: -1;
     }
 
     .profile-pic {
-        width: 200px; /* Slightly smaller profile pic */
+        width: 200px;
         height: 200px;
-    }
-
-    .circle-bg-behind,
-    .circle-bg-front {
-        width: 180px; /* Adjust circle sizes */
-        height: 180px;
-    }
-
-    /* Skills Section Mobile Wrap */
-    .skills-grid {
-        grid-template-columns: 1fr; /* Stack skill cards vertically */
-        gap: 1.5rem; /* Adjust gap */
-    }
-
-    .skill-card {
-        padding: 1.2rem; /* Adjust card padding */
-    }
-
-    /* Projects Section Mobile Wrap */
-    .projects-grid {
-        grid-template-columns: 1fr; /* Stack project cards vertically */
-        gap: 1.5rem; /* Adjust gap */
-    }
-
-    .project-card {
-        padding: 1.2rem; /* Adjust card padding */
-    }
-
-    /* Gallery Section Mobile Wrap */
-    .gallery-grid {
-        grid-template-columns: 1fr; /* Stack gallery images vertically */
-        grid-gap: 1rem; /* Adjust gap */
-    }
-
-    /* Override specific image placement for mobile */
-    .gallery-grid img:nth-child(4),
-    .gallery-grid img:nth-child(5) {
-        grid-column: auto; /* Reset grid-column for stacking */
-    }
-
-    /* Contact Section Mobile Wrap */
-    .contact-wrapper {
-        flex-direction: column; /* Stack contact info and form vertically */
-        gap: 2rem; /* Adjust gap */
-    }
-
-    .input-row {
-        flex-direction: column; /* Stack input fields vertically */
-        gap: 1rem; /* Adjust gap between stacked inputs */
-    }
-
-    .input-row input {
-        flex: 1 1 100%; /* Make inputs take full width */
-    }
-
-    .contact-form textarea {
-        width: 100%; /* Ensure textarea takes full width */
-    }
-
-    /* General Section Adjustments for Mobile */
-    .section {
-        padding: 2.5rem 1rem; /* Reduce overall section padding */
-    }
-
-    .section h2 {
-        font-size: 1.8rem; /* Adjust section heading size */
-        text-align: center; /* Center section headings */
-    }
-
-    .socials {
-        flex-direction: column; /* Stack social links vertically */
-        gap: 1rem; /* Adjust gap */
-    }
-}
-
-/* Global Navbar Fix for all screen sizes */
-.navbar {
-    position: fixed; /* Make the navbar fixed at the top */
-    top: 0; /* Align to the top of the viewport */
-    width: 100%; /* Ensure it spans the full width */
-    z-index: 1000; /* Ensure it's above other content */
-    background: #1A3353; /* Ensure it has a background when fixed */
-}
-
-/* Adjust padding for the hero section to account for the fixed navbar */
-.hero-section {
-    padding-top: 7rem; /* Original padding-top for desktop */
-}
-
-/* Adjust padding for the body to ensure content is not hidden behind the fixed navbar */
-body {
-    padding-top: 0; /* Reset body padding-top, as hero-section will handle it */
-}
-
-/* Ensure the hero section's padding-top is responsive */
-@media (min-width: 769px) {
-    .hero-section {
-        padding-top: 7rem; /* Maintain original padding for larger screens */
     }
 }
