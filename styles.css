@@ -501,3 +501,134 @@ body {
         flex: 1 1 100%;
     }
 }
+
+/* Responsive Adjustments for Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Navbar Mobile Wrap */
+    .navbar {
+        flex-direction: column; /* Stack logo and nav links vertically */
+        padding: 1rem; /* Adjust padding for smaller screens */
+        position: relative; /* Change to relative for better flow on mobile */
+    }
+
+    .nav-links {
+        margin-top: 1rem; /* Add space between logo and links */
+        flex-direction: column; /* Stack nav links vertically */
+        align-items: center; /* Center align individual links */
+        width: 100%; /* Make links take full width */
+    }
+
+    .nav-links li a {
+        width: 80%; /* Make buttons take more width for easier tapping */
+        text-align: center; /* Center text within buttons */
+        margin-bottom: 0.5rem; /* Add space between stacked buttons */
+    }
+
+    /* Hero Section Mobile Wrap */
+    .hero-container {
+        flex-direction: column; /* Stack text and image vertically */
+        text-align: center; /* Center align text content */
+        padding: 1rem; /* Adjust padding */
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem; /* Adjust heading size for mobile */
+    }
+
+    .hero-text p {
+        font-size: 1rem; /* Adjust paragraph size */
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 0.8rem; /* Adjust gap between buttons */
+        width: 100%; /* Make buttons take full width */
+    }
+
+    .hero-buttons .btn {
+        width: 80%; /* Make buttons take more width */
+        margin: 0 auto; /* Center buttons */
+    }
+
+    .hero-image {
+        margin-top: 2rem; /* Add space between text and image */
+        order: -1; /* Place image above text on mobile */
+    }
+
+    .profile-pic {
+        width: 200px; /* Slightly smaller profile pic */
+        height: 200px;
+    }
+
+    .circle-bg-behind,
+    .circle-bg-front {
+        width: 180px; /* Adjust circle sizes */
+        height: 180px;
+    }
+
+    /* Skills Section Mobile Wrap */
+    .skills-grid {
+        grid-template-columns: 1fr; /* Stack skill cards vertically */
+        gap: 1.5rem; /* Adjust gap */
+    }
+
+    .skill-card {
+        padding: 1.2rem; /* Adjust card padding */
+    }
+
+    /* Projects Section Mobile Wrap */
+    .projects-grid {
+        grid-template-columns: 1fr; /* Stack project cards vertically */
+        gap: 1.5rem; /* Adjust gap */
+    }
+
+    .project-card {
+        padding: 1.2rem; /* Adjust card padding */
+    }
+
+    /* Gallery Section Mobile Wrap */
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Stack gallery images vertically */
+        grid-gap: 1rem; /* Adjust gap */
+    }
+
+    /* Override specific image placement for mobile */
+    .gallery-grid img:nth-child(4),
+    .gallery-grid img:nth-child(5) {
+        grid-column: auto; /* Reset grid-column for stacking */
+    }
+
+    /* Contact Section Mobile Wrap */
+    .contact-wrapper {
+        flex-direction: column; /* Stack contact info and form vertically */
+        gap: 2rem; /* Adjust gap */
+    }
+
+    .input-row {
+        flex-direction: column; /* Stack input fields vertically */
+        gap: 1rem; /* Adjust gap between stacked inputs */
+    }
+
+    .input-row input {
+        flex: 1 1 100%; /* Make inputs take full width */
+    }
+
+    .contact-form textarea {
+        width: 100%; /* Ensure textarea takes full width */
+    }
+
+    /* General Section Adjustments for Mobile */
+    .section {
+        padding: 2.5rem 1rem; /* Reduce overall section padding */
+    }
+
+    .section h2 {
+        font-size: 1.8rem; /* Adjust section heading size */
+        text-align: center; /* Center section headings */
+    }
+
+    .socials {
+        flex-direction: column; /* Stack social links vertically */
+        gap: 1rem; /* Adjust gap */
+    }
+}
