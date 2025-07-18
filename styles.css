@@ -581,4 +581,127 @@ body {
     height: 200px;
   }
 }
+.connect-section {
+            background: linear-gradient(to right, #071230, #1543a6); /* Consistent with other gradients */
+            padding: 40px 20px;
+            box-sizing: border-box;
+            color: white;
+            border-radius: 15px; /* Added rounded corners to the section */
+            margin: 20px; /* Add some margin around the section */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+        }
 
+        .connect-content {
+            max-width: 1000px; /* Increased max-width to allow more horizontal space */
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            text-align: center; /* Center the grid container */
+        }
+
+        .connect-section .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for title */
+        }
+
+        .contact-grid {
+            display: flex; /* Use flexbox for horizontal alignment */
+            justify-content: center; /* Center the items horizontally */
+            align-items: flex-start; /* Align items to the top if they have different heights */
+            flex-wrap: wrap; /* Allow wrapping to the next line on smaller screens */
+            gap: 25px; /* Space between contact items */
+        }
+
+        .contact-item {
+            flex: 0 0 auto; /* Do not grow, do not shrink, base size is auto (content-driven) */
+        }
+
+        .contact-link {
+            display: flex;
+            flex-direction: column; /* Stack icon and text */
+            align-items: center;
+            gap: 12px; /* Slightly reduced gap for more compactness */
+            text-decoration: none;
+            color: white; /* Default text color */
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover effect for scaling and background */
+            padding: 8px 12px; /* Slightly reduced padding for compactness */
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.05); /* Slightly transparent background */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for items */
+        }
+
+        .contact-link:hover {
+            transform: scale(1.05); /* Slightly increased scale on hover for more impact */
+            background-color: rgba(255, 255, 255, 0.15); /* More visible background on hover */
+        }
+
+        .icon-circle {
+            width: 60px; /* Reduced icon circle size */
+            height: 60px; /* Reduced icon circle size */
+            border-radius: 50%;
+            background: linear-gradient(to bottom right, #1543a6, #071230); /* Gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-link:hover .icon-circle {
+            transform: scale(1.1); /* Slightly more scale for the icon on hover */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .icon-circle i,
+        .icon-circle svg {
+            stroke: white; /* White icon color */
+            width: 32px; /* Reduced icon size */
+            height: 32px; /* Reduced icon size */
+        }
+
+        .contact-text {
+            font-size: 1rem; /* Slightly reduced font size */
+            font-weight: 500;
+            text-align: center;
+            word-break: break-word;
+        }
+
+        /* Responsive adjustments for Let's Connect section */
+        @media (max-width: 768px) {
+            .connect-section .section-title {
+                font-size: 2rem;
+            }
+            .contact-grid {
+                flex-direction: column; /* Stack items vertically on very small screens */
+                gap: 20px; /* Adjust gap when stacked */
+            }
+            .contact-item {
+                width: 90%; /* Make stacked items take more width */
+                max-width: 300px; /* Limit max width for stacking */
+                margin: 0 auto; /* Center individual stacked items */
+            }
+            .contact-link {
+                flex-direction: row; /* Icon and text side-by-side on mobile */
+                justify-content: flex-start; /* Align to start */
+                padding: 12px 15px; /* Adjust padding */
+                gap: 15px;
+            }
+            .icon-circle {
+                width: 50px; /* Even smaller icon circles on mobile */
+                height: 50px;
+            }
+            .icon-circle i,
+            .icon-circle svg {
+                width: 26px;
+                height: 26px;
+            }
+            .contact-text {
+                font-size: 0.95rem;
+                text-align: left;
+                flex-grow: 1;
+            }
+        }
