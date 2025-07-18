@@ -21,198 +21,277 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+.section {
+            background: linear-gradient(to right, #013994, #001229); /* Consistent gradient background */
+            padding: 60px 20px;
+            box-sizing: border-box;
+            color: white; /* Ensure text is white for contrast on dark background */
+            border-radius: 15px; /* Added rounded corners to the section */
+            margin: 20px auto; /* Add some margin around the section and center it */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+            max-width: 1200px; /* Consistent max-width for the section's content area */
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem; /* Consistent with other section titles */
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for title */
+            color: #2D9CDB; /* Accent Color for section headings */
+        }
+
+        /* Inner content wrapper for consistent padding and max-width within sections */
+        .section-content-wrapper {
+            max-width: 1200px; /* Matches the section's max-width */
+            margin: 0 auto; /* Centers the content */
+            padding: 0 20px; /* Consistent internal padding */
+            box-sizing: border-box;
+        }
+
+        /* Hero Section (if it exists, keep its specific background) */
+        .hero-section {
+            padding-top: 7rem;
+            min-height: 45vh;
+            display: flex;
+            flex-direction: column; /* Changed to column to stack navbar and hero-container */
+            align-items: center;
+            justify-content: center;
+            background-color: #102A43; /* Primary Background */
+            position: relative;
+            margin: 0; /* Remove margin for hero section */
+            border-radius: 0; /* Remove border-radius for hero section */
+            box-shadow: none; /* Remove box-shadow for hero section */
+            max-width: none; /* Hero section can span full width */
+            color: white; /* Ensure text is white */
+        }
 
 /* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-    /* Secondary Background / Navbar background */
-    background: #1A3353; /* Slightly lighter dark blue for navbar */
-}
+            width: 100%;
+            max-width: 1200px; /* Align with content width */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px; /* Consistent padding */
+            position: absolute; /* Position relative to hero-section */
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000; /* Ensure navbar is on top */
+        }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    /* Main Text Color */
-    color: #FFFFFF; 
-}
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2D9CDB; /* Accent color for logo */
+        }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    padding: 0;
-    margin: 0;
-}
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 1.5rem;
+        }
 
-.nav-links li a {
-    text-decoration: none;
-    padding: 0.6rem 1.2rem;
-    /* Accent Color for buttons */
-    background-color: #2D9CDB; /* Button color */
-    /* Dark text on accent button */
-    color: #030303;           /* Text color - kept dark for contrast on light blue */
-    font-weight: 600;
-    border-radius: 60px;      /* Rounded corners */
-    transition: background 0.3s ease, transform 0.2s ease;
-    display: inline-block;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 20px; /* Rounded buttons */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
 
-.nav-links li a:hover {
-    /* Slightly darker accent color for hover */
-    background-color: #247bb4; /* Hover color */
-    transform: translateY(-2px); /* Slight lift on hover */
-}
+        .nav-links li a:hover {
+            background-color: #2D9CDB; /* Accent background on hover */
+            color: #030303; /* Dark text on hover */
+        }
 
-/* Hero Section */
-.hero-section {
-    padding-top: 7rem;
-    min-height: 45vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Primary Background */
-    background-color: #102A43; 
-    position: relative;
-}
 
-.hero-container {
-    display: flex;
-    justify-content: space-between; /* pushes items left and right */
-    align-items: center;
-    max-width: 1200px;
-    width: 100%;
-    padding: 2rem;
-    gap: 2rem;
-}
+        .hero-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            padding: 2rem;
+            gap: 2rem;
+            margin-top: 4rem; /* Space for the fixed navbar */
+        }
 
-.hero-text {
-    flex: 1;
-}
+        .hero-text {
+            flex: 1;
+        }
 
-.hero-text h1 {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-    /* Main Text Color / Accent color for name */
-    color: #2D9CDB; /* Changed to accent blue for the name */
-}
+        .hero-text h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #2D9CDB; /* Accent blue for the name */
+        }
 
-.hero-text p {
-    font-size: 1.1rem;
-    /* Subtle Text/Paragraphs Color */
-    color: #BBBBBB; 
-    margin-bottom: 1.2rem;
-}
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #BBBBBB; /* Subtle Text/Paragraphs Color */
+            margin-bottom: 1.2rem;
+        }
 
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-}
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
 
-.btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
 
-.btn.primary {
-    /* Accent Color for primary button */
-    background-color: #2D9CDB;
-    /* Dark text on primary button */
-    color: #030303; 
-}
+        .btn.primary {
+            background-color: #2D9CDB; /* Accent Color for primary button */
+            color: #030303; /* Dark text on primary button */
+        }
 
-.btn.outline {
-    /* Accent Color for outline button border */
-    border: 2px solid #2D9CDB;
-    /* Accent Color for outline button text */
-    color: #2D9CDB; 
-}
+        .btn.outline {
+            border: 2px solid #2D9CDB; /* Accent Color for outline button border */
+            color: #2D9CDB; /* Accent Color for outline button text */
+        }
 
-.btn.outline:hover {
-    /* Accent Color for outline button hover background */
-    background-color: #2D9CDB;
-    /* Dark text on outline button hover */
-    color: #030303; 
-}
+        .btn.outline:hover {
+            background-color: #2D9CDB; /* Accent Color for outline button hover background */
+            color: #030303; /* Dark text on outline button hover */
+        }
 
-/* Hero Image */
-.hero-image {
-    flex: 1;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        /* Hero Image */
+        .hero-image {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.profile-pic {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: transparent;
-    z-index: 2;
-    position: relative;
-}
+        .profile-pic {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: transparent;
+            z-index: 2;
+            position: relative;
+        }
 
-.circle-bg-behind {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 220px; 
-    height: 220px;
-    border-radius: 50%;
-    /* Darker shade of the accent blue */
-    background: radial-gradient(circle, #247bb4); 
-    z-index: 1;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-}
-.circle-bg-front {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 240px; 
-    height: 240px;
-    border-radius: 50%;
-    /* Lighter gradient of accent blue */
-    background: radial-gradient(circle, rgba(45,156,219,0.8), rgba(45,156,219,0.5)); 
-    z-index: 0;
-}
+        .circle-bg-behind {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #247bb4); /* Darker shade of the accent blue */
+            z-index: 1;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        .circle-bg-front {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(45,156,219,0.8), rgba(45,156,219,0.5)); /* Lighter gradient of accent blue */
+            z-index: 0;
+        }
+/* Projects Section */
+.projects-section {
+            /* Applying the consistent gradient background */
+            background: linear-gradient(to left, #013994, #001229);
+            padding: 60px 20px;
+            box-sizing: border-box;
+            color: white; /* Ensure text is white for contrast on dark background */
+            border-radius: 15px; /* Added rounded corners to the section */
+            margin: 20px; /* Add some margin around the section */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+        }
 
-/* Sections */
-/* Skills Section - Alignment & Styling */
-.section {
-    padding: 4rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .projects-section .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for title */
+        }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
+        .projects-grid {
+            display: grid;
+            /* Responsive grid: 2 columns on large screens, adjusts down */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px; /* Consistent max-width for content */
+            margin: 0 auto;
+            padding: 0 20px; /* Add padding to the grid itself */
+        }
 
+        .project-card {
+            background-color: #1A3353; /* Secondary Background for project cards */
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for light text on dark background */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+            cursor: pointer; /* Indicate interactivity */
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+        }
+
+        .project-card h3 {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            color: #60a5fa; /* Highlight project titles */
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p1 { /* Assuming p1 is for tools used */
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #cbd5e1;
+            display: block; /* Ensure it takes its own line */
+            margin-top: 1rem; /* Space above tools line */
+        }
+
+        .project-card p2 { /* Assuming p2 is for sub-details */
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            color: #a0aec0; /* Slightly lighter color for sub-details */
+        }
+
+
+        /* Responsive adjustments for Projects section */
+        @media (max-width: 768px) {
+            .projects-section .section-title {
+                font-size: 2rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr; /* Stack items on smaller screens */
+            }
+        }
+/* Skills Section */
+/* Skills Section - Specifics */
 .skills-section {
-    text-align: left;
-}
-
-.skills-section h2 {
-    /* Accent Color for section headings */
-    color: #2D9CDB; 
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    text-align: left; /* Keep specific text alignment */
 }
 
 .skills-grid {
@@ -222,8 +301,7 @@ body {
 }
 
 .skill-card {
-    /* Secondary Background for cards */
-    background-color: #1A3353; 
+    background-color: #1A3353; /* Secondary Background for cards */
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
@@ -232,14 +310,12 @@ body {
 
 .skill-card h3 {
     margin-bottom: 0.8rem;
-    /* Main Text Color for card headings */
-    color: #FFFFFF; 
+    color: #FFFFFF; /* Main Text Color for card headings */
     font-size: 1.3rem;
 }
 
 .skill-card p {
-    /* Subtle Text/Paragraphs Color */
-    color: #BBBBBB; 
+    color: #BBBBBB; /* Subtle Text/Paragraphs Color */
     font-size: 0.95rem;
     line-height: 1.5;
 }
@@ -249,33 +325,12 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    /* Accent Color for section headings */
-    color: #2D9CDB; 
+/* Responsive adjustments for all sections (including skills) */
+@media (max-width: 768px) {
+    .skills-grid { /* Apply to both grids */
+        grid-template-columns: 1fr; /* Stack items on smaller screens */
+    }
 }
-.section p1:hover{
-    text-decoration: italic;
-    cursor: pointer;
-    /* Dark text on hover, if applicable - otherwise, adjust as needed */
-    color: #102A43; /* Adjusted to a dark blue for hover */
-}
-.projects-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.project-card {
-    /* Secondary Background for project cards */
-    background-color: #1A3353; 
-    padding: 1.5rem;
-    border-radius: 12px;
-    /* Subtle shadow for light text on dark background */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
-}
-
 /* Contact */
 .socials {
     list-style: none;
@@ -317,6 +372,7 @@ body {
     font-size: 0.9rem;
 }
 .gallery-grid {
+    background-color: linear-gradient(to right, #013994,#001229 ); /* Secondary Background for gallery */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.5rem;
@@ -488,7 +544,7 @@ body {
 
 .btn-submit:hover {
     /* Slightly darker accent color for submit button hover */
-    background-color: #247bb4; 
+    transform: translateY(-2px); 
 }
 
 /* Responsive */
@@ -581,6 +637,161 @@ body {
     height: 200px;
   }
 }
+/* Languages Section */
+.languages-section {
+            background: linear-gradient(to right, #013994,#001229); /* A new gradient for this section */
+            padding: 60px 20px;
+            box-sizing: border-box;
+            color: white;
+            border-radius: 15px; /* Added rounded corners to the section */
+            margin: 20px; /* Add some margin around the section */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+        }
+
+        .languages-section-content {
+            max-width: 1200px; /* Consistent max-width for content */
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            text-align: center; /* Center the grid/flex container */
+        }
+
+        .languages-section .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for title */
+        }
+
+        .languages-grid {
+            display: flex; /* Flexbox for horizontal layout */
+            flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+            justify-content: center; /* Centers items horizontally */
+            gap: 20px; /* Space between language buttons */
+        }
+
+        /* Styles for the new button-like language display */
+        .language-button {
+            background: linear-gradient(to right, #001229, #013994); /* Gradient for the button */
+            color: rgb(255, 255, 255);
+            padding: 15px 30px; /* Ample padding for a good button size */
+            border-radius: 30px; /* More rounded edges like the image */
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none; /* Remove underline for links/buttons */
+            display: inline-flex; /* Use inline-flex to center content vertically if needed */
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Button shadow */
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transitions */
+            cursor: pointer; /* Indicates interactivity */
+            flex-shrink: 0; /* Prevent buttons from shrinking too much */
+            min-width: 150px; /* Ensure a minimum width for readability */
+        }
+
+        .language-button:hover {
+            background: linear-gradient(to right,  #001229, #013994); /* Reverse gradient on hover */
+            transform: translateY(-4px); /* More pronounced lift effect */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+        }
+
+        .language-level-text {
+            font-size: 0.9rem; /* Smaller font for the level */
+            font-weight: normal;
+            margin-left: 8px; /* Space between name and level */
+            opacity: 0.9; /* Slightly less prominent */
+        }
+
+        /* Responsive adjustments for Languages section */
+        @media (max-width: 768px) {
+            .languages-section .section-title {
+                font-size: 2rem;
+            }
+            .language-button {
+                font-size: 1.1rem; /* Adjust font size for smaller screens */
+                padding: 12px 25px;
+                min-width: unset; /* Remove min-width on small screens to allow wrapping */
+                flex-grow: 1; /* Allow buttons to grow to fill space */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .language-button {
+                width: 100%; /* Full width on very small screens */
+                margin-bottom: 10px; /* Add space between stacked buttons */
+            }
+        }
+/*Gallery Section */
+
+        .gallery-section {
+            /* Applying the new gradient background */
+            background: linear-gradient(to right, #013994, #001229);
+            padding: 60px 20px;
+            box-sizing: border-box;
+            color: white;
+            border-radius: 15px; /* Added rounded corners to the section */
+            margin: 20px; /* Add some margin around the section */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+        }
+
+        .gallery-section .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for title */
+        }
+
+        .gallery-grid {
+            /* No background on the grid itself, section takes care of it */
+            display: grid;
+            /* Responsive grid: 3 columns on large screens, adjusts down */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px; /* Increased max-width for more content space */
+            margin: 0 auto;
+            padding: 0 20px; /* Add padding to the grid itself */
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: auto; /* Allows image to maintain its natural aspect ratio */
+            /* Removed aspect-ratio: 1 / 1; to allow original aspect ratios */
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            object-fit: cover; /* Ensures images cover their area without distortion (important for varying aspect ratios) */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Smooth transitions for hover effects */
+            cursor: pointer;
+            box-sizing: border-box; /* Ensures padding/border are included in the element's total width and height */
+            border: 3px solid transparent; /* Transparent border by default */
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.03); /* Slightly less aggressive scale on hover */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5); /* Deeper shadow on hover */
+            border: 3px solid #60a5fa; /* Blue stroke on hover */
+        }
+
+        /* Responsive adjustments for Gallery section */
+        @media (max-width: 768px) {
+            .gallery-section .section-title {
+                font-size: 2rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min-width for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr; /* Stack images on very small screens */
+                padding: 0 10px;
+            }
+        }
+/* Let's Connect Section */
 .connect-section {
             background: linear-gradient(to right, #071230, #1543a6); /* Consistent with other gradients */
             padding: 40px 20px;
