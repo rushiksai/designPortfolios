@@ -41,3 +41,27 @@
 function toggleMenu() {
     document.querySelector('.nav-links').classList.toggle('active');
   }
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu after clicking a link
+                    document.getElementById('nav-toggle').checked = false;
+                }
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const navbar = document.querySelector('.navbar');
+            const navToggle = document.getElementById('nav-toggle');
+            
+            if (!navbar.contains(e.target) && navToggle.checked) {
+                navToggle.checked = false;
+            }
+        });
