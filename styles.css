@@ -51,18 +51,14 @@ h1, h2, h3 {
 /* Hero Section */
 .hero-section {
     padding-top: 7rem;
-    min-height: 45vh;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column; /* Stacks navbar and hero-container */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #102A43; /* Primary Background */
+    background-color: #102A43;
     position: relative;
-    margin: 0; /* Remove margin for hero section */
-    border-radius: 0; /* Remove border-radius for hero section */
-    box-shadow: none; /* Remove box-shadow for hero section */
-    max-width: none; /* Hero section can span full width */
-    color: white; /* Ensure text is white */
+    color: white;
 }
 
 /* Navbar */
@@ -74,13 +70,15 @@ h1, h2, h3 {
     padding: 1rem 2rem;
     position: fixed;
     top: 0;
-    left: 0; /* Ensure it starts from the left */
-    right: 0; /* Ensure it extends to the right */
+    left: 0;
+    right: 0;
     z-index: 1000;
     background: rgba(11, 29, 58, 0.98);
+    backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
     min-height: 70px;
+    transition: all 0.3s ease;
 }
 
 .navbar .logo {
@@ -88,136 +86,121 @@ h1, h2, h3 {
     font-weight: bold;
     color: #60a5fa;
     text-decoration: none;
-    margin-right: auto; /* This pushes the logo to the far left */
+    z-index: 1001;
 }
 
-/* Hidden checkbox for the hamburger menu functionality (checkbox hack) */
+/* Hidden checkbox for hamburger menu */
 .nav-toggle {
-    display: none; /* Keeps the actual checkbox element hidden */
+    display: none;
 }
 
-/* Hamburger Icon Styles - Hidden by default on desktop */
+/* Hamburger Icon - Hidden on desktop */
 .hamburger {
-    display: none; /* Hidden by default on larger screens */
+    display: none;
     flex-direction: column;
     justify-content: space-around;
     width: 30px;
     height: 25px;
     cursor: pointer;
-    z-index: 1001; /* Ensures it's above the menu when open */
-    margin-left: 20px; /* Provides spacing from other elements if any */
-}
-.hamburger .bar {
-  width: 100%;
-  height: 3px;
-  background-color: white;
-  border-radius: 5px;
-  transition: all 0.3s ease-in-out;
+    z-index: 1001;
 }
 
-/* Navigation Links (Desktop View) */
-.navbar .nav-links {
+.hamburger .bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navigation Links - Desktop */
+.nav-links {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Display horizontally on desktop */
+    display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1.5rem; /* Spacing between desktop links */
-    /* Reset mobile-specific positioning for desktop */
-    position: static; /* Important: Resets to normal flow on desktop */
+    gap: 2rem;
+    position: static;
     width: auto;
-    max-width: none;
     height: auto;
     background: none;
     box-shadow: none;
-    transition: none; /* Remove transition for desktop */
 }
 
-.navbar .nav-links li {
-    margin: 0; /* Reset margin for desktop */
+.nav-links li {
+    margin: 0;
 }
 
-.navbar .nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.2rem;
-  transition: color 0.3s ease, transform 0.3s ease;
-  padding: 10px 0;
-  position: relative;
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 10px 0;
+    position: relative;
 }
 
-.navbar .nav-links a:hover {
-  color: #87cefa;
-  transform: translateY(-2px);
+.nav-links a:hover {
+    color: #60a5fa;
+    transform: translateY(-2px);
 }
 
-.navbar .nav-links a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: #87cefa;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: width 0.3s ease;
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #60a5fa;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
 }
 
-.navbar .nav-links a:hover::after {
-  width: 100%;
+.nav-links a:hover::after {
+    width: 100%;
 }
 
-/* Hamburger icon animation when menu is open - these stay the same */
-.nav-toggle:checked + .hamburger .bar:nth-child(1) {
-  transform: translateY(11px) rotate(45deg);
-}
-
-.nav-toggle:checked + .hamburger .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-toggle:checked + .hamburger .bar:nth-child(3) {
-  transform: translateY(-11px) rotate(-45deg);
-}
-
-/* Hero Content Layout - Desktop */
+/* Hero Content */
 .hero-container {
     display: flex;
-    flex-direction: row; /* Arranges text and image side-by-side on desktop */
-    justify-content: space-around; /* Distributes space between items */
-    align-items: center; /* Centers items vertically */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     max-width: 1200px;
     width: 100%;
     padding: 2rem;
-    gap: 2rem; /* Space between text block and image */
-    margin-top: 4rem; /* Space for the fixed navbar */
+    gap: 2rem;
+    margin-top: 4rem;
 }
 
 .hero-text {
-    flex: 1; /* Allows text to take available space */
-    text-align: left; /* Aligns text to the left */
-    padding-right: 2rem; /* Add some padding to the right of the text */
+    flex: 1;
+    text-align: left;
+    padding-right: 2rem;
 }
 
 .hero-text h1 {
     font-size: 2.8rem;
     margin-bottom: 1rem;
-    color: #2D9CDB; /* Accent blue for the name */
+    color: #2D9CDB;
+    line-height: 1.2;
 }
 
 .hero-text p {
     font-size: 1.1rem;
-    color: #BBBBBB; /* Subtle Text/Paragraphs Color */
+    color: #BBBBBB;
     margin-bottom: 1.2rem;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 1rem; /* Space between buttons */
-    margin-top: 1.5rem; /* Add some space above the buttons */
-    justify-content: flex-start; /* Align buttons to the left */
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: flex-start;
 }
 
 .btn {
@@ -226,42 +209,42 @@ h1, h2, h3 {
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s;
-    white-space: nowrap; /* Prevent buttons from wrapping text */
+    white-space: nowrap;
+    display: inline-block;
 }
 
 .btn.primary {
-    background-color: #2D9CDB; /* Accent Color for primary button */
-    color: #030303; /* Dark text on primary button */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for primary button */
+    background-color: #2D9CDB;
+    color: #030303;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn.primary:hover {
-    transform: translateY(-2px); /* Lift effect on hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn.outline {
-    border: 2px solid #2D9CDB; /* Accent Color for outline button border */
-    color: #2D9CDB; /* Accent Color for outline button text */
-    background-color: transparent; /* Ensure transparent background */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for outline button */
+    border: 2px solid #2D9CDB;
+    color: #2D9CDB;
+    background-color: transparent;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn.outline:hover {
-    background-color: #2D9CDB; /* Accent Color for outline button hover background */
-    color: #030303; /* Dark text on outline button hover */
-    transform: translateY(-2px); /* Lift effect on hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+    background-color: #2D9CDB;
+    color: #030303;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Hero Image */
 .hero-image {
-    flex: 0 0 auto; /* Prevents image from growing/shrinking, maintains its size */
+    flex: 0 0 auto;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0; /* Remove margin-top for row layout */
 }
 
 .profile-pic {
@@ -269,7 +252,6 @@ h1, h2, h3 {
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
-    background: transparent;
     z-index: 2;
     position: relative;
 }
@@ -282,10 +264,11 @@ h1, h2, h3 {
     width: 220px;
     height: 220px;
     border-radius: 50%;
-    background: radial-gradient(circle, #247bb4); /* Darker shade of the accent blue */
+    background: radial-gradient(circle, #247bb4);
     z-index: 1;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
+
 .circle-bg-front {
     position: absolute;
     bottom: 0;
@@ -294,22 +277,208 @@ h1, h2, h3 {
     width: 240px;
     height: 240px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(45,156,219,0.8), rgba(45,156,219,0.5)); /* Lighter gradient of accent blue */
+    background: radial-gradient(circle, rgba(45,156,219,0.8), rgba(45,156,219,0.5));
     z-index: 0;
 }
-/* New circle background for consistency */
+
 .circle-bg-front2 {
     position: absolute;
-    top: 10%; /* Adjust position as needed */
-    right: 10%; /* Adjust position as needed */
-    width: 180px; /* Size */
-    height: 180px; /* Size */
+    top: 10%;
+    right: 10%;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(45,156,219,0.6), rgba(45,156,219,0.3)); /* Another gradient */
+    background: radial-gradient(circle, rgba(45,156,219,0.6), rgba(45,156,219,0.3));
     z-index: 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Show hamburger menu on mobile */
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Hide navigation links by default on mobile */
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 100%;
+        max-width: 300px;
+        height: calc(100vh - 170px);
+        background: rgba(11, 29, 58, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 2rem;
+        gap: 1.5rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        transition: right 0.3s ease-in-out;
+        z-index: 999;
+    }
+    
+    /* Show navigation when checkbox is checked */
+    .nav-toggle:checked ~ .nav-links {
+        right: 0;
+    }
+    
+    /* Hamburger animation when menu is open */
+    .nav-toggle:checked + .hamburger .bar:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+    }
+    
+    .nav-toggle:checked + .hamburger .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle:checked + .hamburger .bar:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+    }
+    
+    /* Mobile navigation links styling */
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 1rem 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-links a:hover {
+        background-color: rgba(96, 165, 250, 0.1);
+        border-radius: 8px;
+    }
+    
+    /* Hero section mobile adjustments */
+    .hero-section {
+        padding-top: 5rem;
+        min-height: 100vh;
+    }
+    
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .hero-text {
+        padding-right: 0;
+        text-align: center;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+    
+    /* Adjust hero image for mobile */
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .circle-bg-behind {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .circle-bg-front {
+        width: 190px;
+        height: 190px;
+    }
+    
+    .circle-bg-front2 {
+        width: 140px;
+        height: 140px;
+    }
+    
+    /* Add overlay to prevent scrolling when menu is open */
+    .nav-toggle:checked ~ .hero-container::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 1rem 1rem;
+    }
+    
+    .navbar .logo {
+        font-size: 1.5rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+    
+    .profile-pic {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .circle-bg-behind {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .circle-bg-front {
+        width: 170px;
+        height: 170px;
+    }
+    
+    .circle-bg-front2 {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* General section styling for demo */
+section {
+    padding: 80px 2rem 2rem;
+    color: white;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2D9CDB;
+}
 /* Skills Section - Specifics */
 .skills-section {
     text-align: left; /* Keep specific text alignment */
